@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>bootstrap starter</title>
+  <title>Contacts</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-  <form class="bg-white bg-white rounded-sm w-50 p-5 mt-3 mr-auto ml-auto" action="#" method="POST">
+  <form class="contacts-form bg-white bg-white rounded-sm w-50 p-4 mt-3 mr-auto ml-auto" action="#" method="POST">
     <div class="form-group d-flex flex-column ">
       <h3 class="h5 text-center">Yangi kontakt qo'shish</h3>
 
@@ -22,7 +22,7 @@
       <input type="text" name="userSurName" placeholder="Surname (optional)" id="userSurName">
 
       <label class="mt-2 mb-0" for="userTel">Phone number</label>
-      <input type="tel" name="userTel" placeholder="Phone (required)" id="userTel">
+      <input type="tel" name="userTel" minlength="3" placeholder="Phone (required)" id="userTel">
 
       <button class="btn btn-dark mt-3 mb-3 w-25 add-contact-btn" id="addContact" type="submit">Add contact</button>
 
@@ -30,9 +30,11 @@
       <details class="bg-dark rounded-sm text-white p-2 pt-2">
         <summary>Kontaktlar</summary>
         <ol class="contacts-list">
-          <li class="one-contact">
-            <h5 class="h6 m-0">Falonchiyev falonchi</h5>
-            <span class="text-white-50">+9989782318218</span>
+          <li>
+            <a class="one-contact card-link" href="#">
+              <h5 class="h6 m-0">Falonchiyev falonchi</h5>
+              <span class="text-white-50">+9989782318218</span>
+            </a>
           </li>
         </ol>
       </details>
@@ -42,6 +44,7 @@
 
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/utils.js"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
