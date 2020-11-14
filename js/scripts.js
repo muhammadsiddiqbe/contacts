@@ -2,15 +2,13 @@
 
 var elContactsForm = document.querySelector('.contacts-form');
 var elContactsBtn  = elContactsForm.querySelector('.form-btn');
+var elContactsList = elContactsForm.querySelector('.contacts-list');
+    elContactsList.innerHTML = '';
 
-
-
-
-
-elContactsBtn.addEventListener('click', function(evt) {
+    elContactsForm.addEventListener('submit', function(evt) {
     evt.preventDefault();
 
-    htmldagi qiymat olish uchun kerakli elemenlarni topib olamiz !
+    // htmldagi qiymat olish uchun kerakli elemenlarni topib olamiz !
 
     var elContactName  = elContactsForm.querySelector('#userName').value;
     var elContactSurName = elContactsForm.querySelector('#userSurName').value;
@@ -18,16 +16,15 @@ elContactsBtn.addEventListener('click', function(evt) {
 
 // qiymat ushlash uchun arraylar
 
-    var aboutContact = {
+    var aboutContact = [
+      {
         name: elContactName,
         surName: elContactSurName,
-        Tel: elContactTel
-    }
+        tel: elContactTel
+      }
+    ]
 
     console.log(aboutContact);
-
-  console.log(elContactName, elContactSurName,elContactTel );
-
 
 
   var elContactsList = elContactsForm.querySelector('.contacts-list');
@@ -40,12 +37,12 @@ elContactsBtn.addEventListener('click', function(evt) {
 
   var oneContactH5 = document.createElement('h5');
       oneContactH5.classList.add('h6','m-0')
-      oneContactH5.textContent = 'Falonchiyev Falonchi';
+      oneContactH5.textContent = `${aboutContact[0].name} ${aboutContact[0].surName}`;
 
   var oneContactSpan = document.createElement('span');
       oneContactSpan.classList.add('text-white-50');
 
-  oneContactSpan.textContent = "Qalesan ?";
+  oneContactSpan.textContent = aboutContact[0].tel;
 
   elContactsList.appendChild(oneContactLi);
 
